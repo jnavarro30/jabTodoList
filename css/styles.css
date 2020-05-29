@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.todo__app {
+  height: 100vh;
+  border: 2px solid red;
+  border-top: 2px solid yellow;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 5fr;
+      grid-template-rows: 1fr 5fr;
+  text-align: center;
+  background: #20252B;
+  color: white;
+}
+
+.app__header .header__title {
+  padding: 1rem;
+}
+
+.app__header .header__input {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 85%;
+  margin-bottom: 1rem;
+}
+
+.main__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.main__list .list__item {
+  border-bottom: 2px solid green;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: start;
+  padding: 1rem;
+  max-width: 100%;
+}
+
+.main__list .item__text:hover {
+  cursor: pointer;
+}
+
+.main__list .item__delete {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.main__list .item__delete:hover {
+  cursor: pointer;
+}
+
+.line__through {
+  text-decoration: line-through;
+  opacity: 0.4;
+  color: lightgray;
+}
+
+@media (min-height: 750px) {
+  .main__list {
+    height: 700px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,97 @@
+//Settings
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Variables
+
+$mainBlack: #20252B;
+$mainOrange: #f7ad24;
+
+//Mixins
+
+@mixin onHover {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+//App
+
+.todo__app {
+    height: 100vh;
+    border: 2px solid red;
+    border-top: 2px solid yellow;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    text-align: center;
+    background: $mainBlack;
+    color: white;
+}
+
+//Header
+
+.app__header {
+    
+    .header__title {
+        padding: 1rem;
+    }
+
+    .header__input {
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 0.5rem;
+        width: 85%;
+        margin-bottom: 1rem;
+    }
+}
+
+//Main
+
+.main__list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    overflow: scroll;
+
+    .list__item {
+        border-bottom: 2px solid green;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-items: start;
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .item__text {
+        @include onHover;
+    }
+
+    .item__delete {
+        justify-self: end;
+        @include onHover;
+    }
+}
+
+//Classes
+
+.line__through {
+    text-decoration: line-through;
+    opacity: 0.4;
+    color: lightgray;
+}
+
+
+//Responsive
+
+@media (min-height: 750px) {
+    .main__list {
+        height: 700px;
+    }
+}

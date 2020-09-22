@@ -19,6 +19,11 @@ $mainYellow: rgba(255, 255, 0, 0.507);
     }
 }
 
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
 //App
 
 .todo__app {

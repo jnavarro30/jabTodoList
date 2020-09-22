@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .todo__app {
   min-height: 100vh;
   height: auto;
@@ -46,7 +51,7 @@
   max-width: 90%;
   height: 500px;
   margin: 0 auto;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .main__list .list__item {

@@ -9,7 +9,7 @@
 //Variables
 
 $mainBlack: #20252B;
-$mainOrange: #f7ad24;
+$mainYellow: rgba(255, 255, 0, 0.507);
 
 //Mixins
 
@@ -22,62 +22,24 @@ $mainOrange: #f7ad24;
 //App
 
 .todo__app {
-    height: 100vh;
-    border: 2px solid red;
-    border-top: 2px solid yellow;
+    min-height: 100vh;
+    height: auto;
+    border: 2px solid $mainYellow;
     display: grid;
     grid-template-rows: 1fr 5fr;
     text-align: center;
     background: $mainBlack;
     color: white;
+    font-size: 1.1rem
 }
 
 //Header
 
-.app__header {
-    
-    .header__title {
-        padding: 1rem;
-    }
-
-    .header__input {
-        border: 2px solid white;
-        border-radius: 5px;
-        padding: 0.5rem;
-        width: 85%;
-        margin-bottom: 1rem;
-    }
-}
+@import 'partials/header';
 
 //Main
 
-.main__list {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 500px;
-    margin: 0 auto;
-    overflow: scroll;
-
-    .list__item {
-        border-bottom: 2px solid green;
-        display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-        justify-items: start;
-        padding: 1rem;
-        max-width: 100%;
-    }
-
-    .item__text {
-        @include onHover;
-    }
-
-    .item__delete {
-        justify-self: end;
-        @include onHover;
-    }
-}
+@import 'partials/main';
 
 //Classes
 
@@ -90,8 +52,29 @@ $mainOrange: #f7ad24;
 
 //Responsive
 
-@media (min-height: 750px) {
+@media (min-width: 700px) {
+    .app__header {
+    
+        .header__title {
+            padding: 2rem;
+            font-size: 3.6rem;
+        }
+    
+        .header__input {
+            font-size: 2rem;
+            padding: 1rem;
+        }
+    }
     .main__list {
-        height: 700px;
+        height: auto;
+    
+        .list__item {
+            padding: 2rem;
+        }
+    
+        .item__text, .item__delete {
+            font-size: 1.9rem;
+        }
     }
 }
+

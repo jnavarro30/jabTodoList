@@ -6,9 +6,9 @@
 }
 
 .todo__app {
-  height: 100vh;
-  border: 2px solid red;
-  border-top: 2px solid yellow;
+  min-height: 100vh;
+  height: auto;
+  border: 2px solid rgba(255, 255, 0, 0.507);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 5fr;
@@ -16,6 +16,7 @@
   text-align: center;
   background: #20252B;
   color: white;
+  font-size: 1.1rem;
 }
 
 .app__header .header__title {
@@ -23,11 +24,15 @@
 }
 
 .app__header .header__input {
-  border: 2px solid white;
+  background: black;
+  border: 3px solid rgba(255, 255, 0, 0.507);
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0.6rem;
   width: 85%;
   margin-bottom: 1rem;
+  color: white;
+  font-weight: bolder;
+  outline: none;
 }
 
 .main__list {
@@ -38,14 +43,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 90%;
+  max-width: 90%;
   height: 500px;
   margin: 0 auto;
   overflow: scroll;
 }
 
 .main__list .list__item {
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid rgba(255, 255, 0, 0.507);
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
@@ -57,6 +62,14 @@
   max-width: 100%;
 }
 
+.main__list [contenteditable] {
+  outline: none;
+}
+
+.main__list .item__text {
+  font-weight: bolder;
+}
+
 .main__list .item__text:hover {
   cursor: pointer;
 }
@@ -64,6 +77,7 @@
 .main__list .item__delete {
   -ms-grid-column-align: end;
       justify-self: end;
+  color: red;
 }
 
 .main__list .item__delete:hover {
@@ -76,9 +90,23 @@
   color: lightgray;
 }
 
-@media (min-height: 750px) {
+@media (min-width: 700px) {
+  .app__header .header__title {
+    padding: 2rem;
+    font-size: 3.6rem;
+  }
+  .app__header .header__input {
+    font-size: 2rem;
+    padding: 1rem;
+  }
   .main__list {
-    height: 700px;
+    height: auto;
+  }
+  .main__list .list__item {
+    padding: 2rem;
+  }
+  .main__list .item__text, .main__list .item__delete {
+    font-size: 1.9rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

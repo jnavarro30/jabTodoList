@@ -1,0 +1,33 @@
+.main__list {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .list__item {
+        border-bottom: 2px solid $mainYellow;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-items: start;
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    [contenteditable] {
+        outline: none;
+    }
+
+    .item__text {
+        @include onHover;
+        font-weight: bolder;
+    }
+
+    .item__delete {
+        justify-self: end;
+        @include onHover;
+        color: red;
+    }
+}
